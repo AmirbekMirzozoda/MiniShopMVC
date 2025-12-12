@@ -4,25 +4,105 @@
     ViewData["Title"] = "Category";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Category Page</h1>
-    <p>Welcome to the Category Page of MiniShopMVC!</p>
-    <div class="mb-3 text-end">
-        <a href="@Url.Action("Create", "Category")" class="btn btn-primary">
-            Добавить категорию
-        </a>
-    </div>
-    <div class="row">
-        @foreach (var category in Model)
-        {
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">@category.Id</h5>
-                        <h5 class="card-title">@category.Name</h5>
+<div class="row">
+    <!-- Start Recent Order -->
+    <div class="col-md-12">
+        <div class="card overflow-hidden mb-0">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h5 class="card-title text-black mb-0">Список категории</h5>
+                </div>
+                <div class="d-flex align-items-left">
+                    <a href="@Url.Action("Create", "Category")" type="button"
+                       class="btn btn-outline-success">+Добавить</a>
+                </div>
+
+            </div>
+
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-traffic mb-0">
+
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Название</th>
+                        </tr>
+                        </thead>
+                        @foreach (var category in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="javascript:void(0);" class="text-muted">#@category.Id</a>
+                                </td>
+                                <td>
+                                    <p class="mb-0">@category.Name</p>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Update", "Category", new { id = category.Id, name = category.Name })" aria-label="anchor" class="btn btn-sm bg-primary-subtle me-1"
+                                       data-bs-toggle="tooltip" data-bs-original-title="Edit">
+                                        <i class="mdi mdi-pencil-outline fs-14 text-primary"></i>
+                                    </a>
+                                    <a onclick="deleteCategory(@category.Id)" aria-label="anchor" class="btn btn-sm bg-danger-subtle" data-bs-toggle="tooltip"
+                                       data-bs-original-title="Delete">
+                                        <i class="mdi mdi-delete fs-14 text-danger"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-footer py-0 border-top">
+                <div class="row align-items-center">
+                    <div class="col-sm">
+                        <div class="text-block text-center text-sm-start">
+                            <span class="fw-medium">1 of 3</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-auto mt-3 mt-sm-0">
+                        <div class="pagination gap-2 justify-content-center py-3 ps-0 pe-3">
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link me-2 rounded-2" href="javascript:void(0);"> Prev </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link rounded-2 me-2" href="#" data-i="1" data-page="5">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link me-2 rounded-2" href="#" data-i="2" data-page="5">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link text-primary rounded-2" href="javascript:void(0);"> next </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        }
+        </div>
     </div>
+    <!-- End Recent Order -->
 </div>
+
+<script>
+    function deleteCategory(id) {
+        if (confirm('Вы уверены, что хотите удалить категорию?')) {
+            fetch(`/Category/Delete/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Ошибка при удалении');
+                }
+            });
+        }
+    }
+</script>

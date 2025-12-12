@@ -4,6 +4,7 @@ using MiniShopMVC.Data;
 using MiniShopMVC.Models;
 using MiniShopMVC.Models.Entities;
 using MiniShopMVC.Models.Filters;
+using MiniShopMVC.Models.ViewModels;
 
 namespace MiniShopMVC.Services;
 
@@ -26,5 +27,27 @@ public class CategoryService(ApplicationDbContext context, IMapper mapper) : ICa
         context.Categories.Add(category);
         await context.SaveChangesAsync();
         return category;
+    }
+
+    public async Task UpdateCategoryAsync(CategoryUpdateViewModel model)
+    {
+        var category = await context.Categories
+            .FirstOrDefaultAsync(x => x.Id == model.Id);
+        
+        if (category == null) return;
+        
+        mapper.Map(model, category);
+        await context.SaveChangesAsync();
+    }
+
+    public async Task DeleteCategoryAsync(int id)
+    {
+        var category = await context.Categories
+            .FirstOrDefaultAsync(x => x.Id == id);
+        
+        if (category == null) return;
+        
+        context.Categories.Remove(category);
+        await context.SaveChangesAsync();
     }
 }

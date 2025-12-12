@@ -1,0 +1,19 @@
+﻿@model MiniShopMVC.Models.ViewModels.CategoryUpdateViewModel
+
+@{
+    ViewData["Title"] = "Добавить категорию";
+}
+
+<h2 class="mb-4">Изменить категорию</h2>
+
+<form asp-controller="Category" asp-action="Update" method="post">
+    <input asp-for="Id" type="hidden" value="@Model.Id" />
+    
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Название категории</label>
+        <input asp-for="Name" class="form-control" value="@Model.Name"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Отмена</a>
+</form>
