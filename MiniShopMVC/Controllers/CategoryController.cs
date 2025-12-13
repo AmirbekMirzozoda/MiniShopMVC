@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MiniShopMVC.Models;
+using MiniShopMVC.Models.Entities;
 using MiniShopMVC.Models.Filters;
 using MiniShopMVC.Models.ViewModels;
 using MiniShopMVC.Services;
@@ -10,8 +11,8 @@ public class CategoryController(ICategoryService service): Controller
 {
     public async Task<IActionResult> Index()
     {
-        var categories = await service.GetCategoriesAsync(new CategoryFilter());
-        return View(categories);
+        ViewBag.Categories = await service.GetCategoriesAsync(new CategoryFilter());
+        return View();
     }
     
     public async Task<IActionResult> Create()
@@ -27,13 +28,14 @@ public class CategoryController(ICategoryService service): Controller
     }
     
     [HttpGet]
-    public async Task<IActionResult> Update([FromQuery] CategoryUpdateViewModel model)
+    public IActionResult Update([FromQuery] CategoryUpdateViewModel model)
     {
-        return View(model);
+        ViewBag.Category = model;
+        return View();
     }
     
     [HttpPost]
-    public async Task<IActionResult> UpdateAsync([FromForm] CategoryUpdateViewModel model)
+    public async Task<IActionResult> Update([FromForm] Category model)
     {
         await service.UpdateCategoryAsync(model);
         return RedirectToAction("Index");

@@ -20,4 +20,48 @@
       <Content Include="wwwroot\assets\.DS_Store" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\analytics-sidebar-dark-rtl.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\analytics-sidebar-dark.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\analytics-sidebar-light-rtl.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\analytics.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\calendar-page.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\contact-page.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\crm-sidebar-dark-rtl.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\crm-sidebar-dark.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\crm-sidebar-light-rtl.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\crm.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\ecommerc-sidebar-dark-rtl.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\ecommerc-sidebar-dark.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\ecommerc-sidebar-light-rtl.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\ecommerce.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\demo\todolist-page.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\landing\bg-pattern.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\landing\client\clients-logo-1.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\landing\client\clients-logo-2.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\landing\client\clients-logo-3.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\landing\client\clients-logo-4.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\landing\client\clients-logo-5.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\landing\dashboard.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\landing\features.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\1.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\10.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\11.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\12.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\2.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\3.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\4.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\5.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\6.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\7.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\8.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\gallery\9.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\products\bag.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\products\headphone.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\products\leather-jacket.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\products\perfuem.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\products\shoes.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\images\products\watch.png" />
+    </ItemGroup>
+
 </Project>

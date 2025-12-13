@@ -1,6 +1,4 @@
-﻿@model List<MiniShopMVC.Models.Entities.Category>
-
-@{
+﻿@{
     ViewData["Title"] = "Category";
 }
 
@@ -29,7 +27,7 @@
                             <th>Название</th>
                         </tr>
                         </thead>
-                        @foreach (var category in Model)
+                        @foreach (var category in ViewBag.Categories)
                         {
                             <tr>
                                 <td>

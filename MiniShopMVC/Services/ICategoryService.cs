@@ -9,6 +9,6 @@ public interface ICategoryService
 {
     Task<List<Category>> GetCategoriesAsync(CategoryFilter f);
     Task<Category> AddCategoryAsync(CategoryAddViewModel model);
-    Task UpdateCategoryAsync(CategoryUpdateViewModel model);
+    Task UpdateCategoryAsync(Category category);
     Task DeleteCategoryAsync(int id);
 }

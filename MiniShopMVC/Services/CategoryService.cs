@@ -29,14 +29,15 @@ public class CategoryService(ApplicationDbContext context, IMapper mapper) : ICa
         return category;
     }
 
-    public async Task UpdateCategoryAsync(CategoryUpdateViewModel model)
+    public async Task UpdateCategoryAsync(Category model)
     {
         var category = await context.Categories
             .FirstOrDefaultAsync(x => x.Id == model.Id);
         
         if (category == null) return;
         
-        mapper.Map(model, category);
+        category.Name = model.Name;
+        context.Categories.Update(category);
         await context.SaveChangesAsync();
     }
 
